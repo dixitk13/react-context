@@ -1,0 +1,21 @@
+.prime-container {
+  .primes {
+    display: grid;
+    width: 90%;
+
+    grid-template-columns: repeat(auto-fit, 30px);
+    .prime {
+      display: flex;
+      flex-direction: column;
+      padding: 1px;
+      margin: 3px 0;
+      text-align: center;
+      .index {
+        background: rgb(155, 233, 168);
+      }
+      .value {
+        background: #f1e05a;
+      }
+    }
+  }
+}
