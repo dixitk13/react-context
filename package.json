@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "rm -rf .cache",
     "start": "concurrently --kill-others \"npm:compile:watch\" \"npm:start:dev\"",
     "start:dev": "tsc --noEmit && parcel public/index.html ",
     "compile:watch": "tsc -p . --noEmit --watch",

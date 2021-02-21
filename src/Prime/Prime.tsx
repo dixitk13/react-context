@@ -18,7 +18,7 @@ export const Prime = ({ index }: PrimeProps) => {
 
   return (
     <div className="prime-container container">
-      <h6>Prime {index}</h6>
+      <h6>Prime# {index}</h6>
       <div className="primes">
         {series.map((x, index) => (
           <div className="prime" key={`prime-series-${index}`}>

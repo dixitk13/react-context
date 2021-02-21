@@ -5,6 +5,7 @@ import {
   counterDelete,
   useCounterContext,
 } from "./";
+import "./styles.scss";
 
 interface CounterProps {
   index: string;
@@ -17,7 +18,7 @@ export const Counter = React.memo(({ index }: CounterProps) => {
   return (
     <div className="counter-container container">
       <h1>{value}</h1>
-      <h6>Count {index}</h6>
+      <h6>Count# {index}</h6>
       <div className="actions">
         <button onClick={() => dispatch(counterIncrement(Number(index)))}>
           Increment

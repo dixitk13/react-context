@@ -1,7 +1,10 @@
 .prime-container {
+  &.container {
+    border-color: rebeccapurple;
+  }
   .primes {
     display: grid;
-    width: 90%;
+    width: 80%;
 
     grid-template-columns: repeat(auto-fit, 30px);
     .prime {
@@ -11,10 +14,13 @@
       margin: 3px 0;
       text-align: center;
       .index {
-        background: rgb(155, 233, 168);
+        border-radius: 3px 3px 0 0;
+        background: yellowgreen;
       }
       .value {
-        background: #f1e05a;
+        color: #fff;
+        border-radius: 0 0 3px 3px;
+        background: cornflowerblue;
       }
     }
   }

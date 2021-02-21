@@ -5,10 +5,10 @@ export const CountersView = () => {
   const state = useCounterState();
   console.log(">>: CountersView");
   return (
-    <>
+    <div>
       {Object.keys(state).map((index) => {
         return <Counter key={`prime-${index}`} index={index} />;
       })}
-    </>
+    </div>
   );
 };

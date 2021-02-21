@@ -17,20 +17,16 @@ import { useCounter } from "./helpers";
 
 export const App = () => {
   return (
-    <PrimeProvider>
-      <CounterProvider>
-        <AppView />
-      </CounterProvider>
-    </PrimeProvider>
-  );
-};
-
-const AppView = () => {
-  return (
     <div className="app">
-      <Actions />
-      <PrimesView />
-      <CountersView />
+      <PrimeProvider>
+        <CounterProvider>
+          <>
+            <Actions />
+            <PrimesView />
+            <CountersView />
+          </>
+        </CounterProvider>
+      </PrimeProvider>
     </div>
   );
 };
