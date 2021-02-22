@@ -4,7 +4,7 @@ import {
   Primes,
   PrimeStateAction,
 } from "./interface";
-import { omit } from "../functions";
+import { omit } from "../helpers/functions";
 
 export const initialPrimeState: PrimeState = {
   series: [{ index: 0, value: 1 }],
@@ -13,7 +13,7 @@ export const initialPrimeState: PrimeState = {
 export const initialState: Primes = {};
 
 export const reducer = (state: Primes, action: PrimeStateAction) => {
-  console.log(">>: action", action);
+  console.log(">>: primes reducer action -> ", action);
   switch (action.type) {
     case PrimeStateEnum.PRIME_STATE_NEXT:
       return {

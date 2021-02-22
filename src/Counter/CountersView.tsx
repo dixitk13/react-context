@@ -3,12 +3,19 @@ import { useCounterState, Counter } from ".";
 
 export const CountersView = () => {
   const state = useCounterState();
-  console.log(">>: CountersView");
+  console.log(">>: Rendered -> CountersView");
   return (
-    <div>
+    <>
       {Object.keys(state).map((index) => {
-        return <Counter key={`prime-${index}`} index={index} />;
+        const idx = Number(index);
+        return (
+          <Counter
+            key={`prime-${index}`}
+            index={idx}
+            value={state?.[idx]?.value}
+          />
+        );
       })}
-    </div>
+    </>
   );
 };

@@ -2,20 +2,29 @@ import * as React from "react";
 import {
   nextPrimeState,
   deletePrime,
-  usePrimeContext,
+  usePrimeDispatch,
   usePrimeIterator,
+  PrimeState,
 } from "./";
 import "./prime.scss";
 
-interface PrimeProps {
+interface PrimeProps extends PrimeState {
   index: number;
 }
 
-export const Prime = ({ index }: PrimeProps) => {
-  const { dispatch, state } = usePrimeContext();
-  const { series } = state[index];
-  const { next } = usePrimeIterator();
+export const Prime = React.memo(({ index, series }: PrimeProps) => {
+  const dispatch = usePrimeDispatch();
+  const { next: nextNumber } = usePrimeIterator();
 
+  const next = React.useCallback(() => {
+    dispatch(nextPrimeState(index, series?.length ?? 0, Number(nextNumber())));
+  }, []);
+
+  const remove = React.useCallback(() => {
+    dispatch(deletePrime(index));
+  }, []);
+
+  console.log(">>: Rendered -> Prime#", index);
   return (
     <div className="prime-container container">
       <h6>Prime# {index}</h6>
@@ -28,17 +37,11 @@ export const Prime = ({ index }: PrimeProps) => {
         ))}
       </div>
       <div className="actions">
-        <button
-          onClick={() =>
-            dispatch(nextPrimeState(index, series?.length ?? 0, Number(next())))
-          }
-        >
-          Next
-        </button>
-        <button className="remove" onClick={() => dispatch(deletePrime(index))}>
+        <button onClick={next}>Next</button>
+        <button className="remove" onClick={remove}>
           Remove
         </button>
       </div>
     </div>
   );
-};
+});

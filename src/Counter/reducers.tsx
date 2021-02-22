@@ -4,7 +4,7 @@ import {
   CounterAction,
   CounterState,
 } from "./interface";
-import { omit } from "../functions";
+import { omit } from "../helpers/functions";
 
 export const initialCounterState: CounterState = {
   value: 0,
@@ -13,6 +13,7 @@ export const initialCounterState: CounterState = {
 export const initialState: Counters = {};
 
 export const reducer = (state: Counters, action: CounterAction) => {
+  console.log(">>: Counter reducer action -> ", action);
   switch (action.type) {
     case CounterStateEnum.COUNTER_STATE_CREATE:
       return {

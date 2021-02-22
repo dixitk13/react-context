@@ -11,11 +11,12 @@ import {
   usePrimeDispatch,
   createPrime,
 } from "./Prime";
-
-import "./app.scss";
 import { useCounter } from "./helpers";
 
+import "./app.scss";
+
 export const App = () => {
+  console.log(">>: Rendered -> App");
   return (
     <div className="app">
       <PrimeProvider>
@@ -30,26 +31,28 @@ export const App = () => {
     </div>
   );
 };
-
-export const Actions = () => {
-  console.log(">>: AppView -> AppView");
+const Actions = () => {
   const counterDispatch = useCounterDispatch();
   const primeDispatch = usePrimeDispatch();
 
-  const { nextCounter } = useCounter();
+  const { nextCounter, counter } = useCounter();
+  const { nextCounter: nextPrimeCounter, counter: primeCounter } = useCounter();
 
+  const addPrimeCallback = React.useCallback(() => {
+    primeDispatch(createPrime(nextPrimeCounter()));
+  }, [primeCounter]);
+
+  const addCounterCallback = React.useCallback(() => {
+    counterDispatch(counterCreate(nextCounter()));
+  }, [counter]);
+
+  console.log(">>: Rendered -> Actions");
   return (
     <div className="actions">
-      <button
-        className="counter-color"
-        onClick={() => counterDispatch(counterCreate(nextCounter()))}
-      >
+      <button className="counter-color" onClick={addCounterCallback}>
         Add Counter
       </button>
-      <button
-        className="prime-color"
-        onClick={() => primeDispatch(createPrime(nextCounter()))}
-      >
+      <button className="prime-color" onClick={addPrimeCallback}>
         Add Prime
       </button>
     </div>
