@@ -1,3 +1,4 @@
+@import "./constants";
 .app {
   height: 100%;
   width: 100%;
@@ -38,11 +39,11 @@
       color: red;
       margin-left: auto;
     }
-    .prime-color {
-      color: rebeccapurple;
-    }
-    .counter-color {
-      color: royalblue;
-    }
+  }
+  .prime-color {
+    color: $prime-color;
+  }
+  .counter-color {
+    color: $counter-color;
   }
 }
