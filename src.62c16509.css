@@ -1,0 +1,77 @@
+.counter-container.container {
+  border-color: royalblue;
+}
+.prime-container.container {
+  border-color: rebeccapurple;
+}
+.prime-container .primes {
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(auto-fit, 30px);
+}
+.prime-container .primes .prime {
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  margin: 3px 0;
+  text-align: center;
+}
+.prime-container .primes .prime .index {
+  border-radius: 3px 3px 0 0;
+  background: yellowgreen;
+}
+.prime-container .primes .prime .value {
+  color: #fff;
+  border-radius: 0 0 3px 3px;
+  background: cornflowerblue;
+}
+.app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+.app .container {
+  min-width: 30vw;
+  position: relative;
+  min-height: 120px;
+  display: flex;
+  border-width: 0.2px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 5px 0;
+  padding: 5px;
+  flex-direction: column;
+}
+.app .container h1 {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+.app .container h6 {
+  position: absolute;
+  font-size: 14px;
+  right: 14px;
+  top: 0;
+}
+.app .actions {
+  display: flex;
+  margin-top: auto;
+}
+.app .actions button {
+  margin: 3px;
+}
+.app .actions .remove {
+  color: red;
+  margin-left: auto;
+}
+.app .actions .prime-color {
+  color: rebeccapurple;
+}
+.app .actions .counter-color {
+  color: royalblue;
+}
+
+/*# sourceMappingURL=/src.62c16509.css.map */
