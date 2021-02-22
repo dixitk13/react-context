@@ -18,7 +18,7 @@ export const Prime = React.memo(({ index, series }: PrimeProps) => {
 
   const next = React.useCallback(() => {
     dispatch(nextPrimeState(index, series?.length ?? 0, Number(nextNumber())));
-  }, []);
+  }, [series]);
 
   const remove = React.useCallback(() => {
     dispatch(deletePrime(index));

@@ -1,6 +1,7 @@
+@import "../constants";
 .prime-container {
   &.container {
-    border-color: rebeccapurple;
+    border-color: $prime-color;
   }
   .primes {
     display: grid;

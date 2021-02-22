@@ -1,5 +1,6 @@
+@import "../constants";
 .counter-container {
   &.container {
-    border-color: royalblue;
+    border-color: $counter-color;
   }
 }
