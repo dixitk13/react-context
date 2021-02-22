@@ -28422,6 +28422,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var CountersView = function CountersView() {
   var state = (0, _.useCounterState)();
   console.log(">>: Rendered -> CountersView");
+
+  if (Object.keys(state).length === 0) {
+    return React.createElement("h3", {
+      className: "counter-color"
+    }, "Use the add Counters button to begin!");
+  }
+
   return React.createElement(React.Fragment, null, Object.keys(state).map(function (index) {
     var _a;
 
@@ -28759,7 +28766,7 @@ var Prime = React.memo(function (_a) {
     var _a;
 
     dispatch((0, _.nextPrimeState)(index, (_a = series === null || series === void 0 ? void 0 : series.length) !== null && _a !== void 0 ? _a : 0, Number(nextNumber())));
-  }, []);
+  }, [series]);
   var remove = React.useCallback(function () {
     dispatch((0, _.deletePrime)(index));
   }, []);
@@ -28806,6 +28813,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var PrimesView = function PrimesView() {
   var state = (0, _.usePrimeState)();
   console.log(">>: Rendered -> PrimesView");
+
+  if (Object.keys(state).length === 0) {
+    return React.createElement("h3", {
+      className: "prime-color"
+    }, "Use the add Primes button to begin!");
+  }
+
   return React.createElement(React.Fragment, null, Object.keys(state).map(function (index) {
     var idx = Number(index);
     return React.createElement(_.Prime, {
@@ -29448,7 +29462,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56913" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53510" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
