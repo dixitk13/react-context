@@ -8,8 +8,8 @@
     "start": "concurrently --kill-others \"npm:compile:watch\" \"npm:start:dev\"",
     "start:dev": "tsc --noEmit && parcel public/index.html ",
     "compile:watch": "tsc -p . --noEmit --watch",
+    "predeploy": "tsc --noEmit && parcel build ./index.html --out-dir dist --public-url /react-context/",
     "deploy": "gh-pages -d dist",
-    "build": "tsc --noEmit && parcel build ./index.html --out-dir build/release --public-url ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
