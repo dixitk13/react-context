@@ -1,4 +1,6 @@
-@import "./constants";
+@import "./_constants";
+@import "./_media";
+
 .app {
   height: 100%;
   width: 100%;
@@ -8,7 +10,10 @@
   align-items: center;
   color: rgba(0, 0, 0, 0.8);
   .container {
-    min-width: 30vw;
+    min-width: 100%;
+    @include media-large() {
+      width: 30vw;
+    }
     position: relative;
     min-height: 120px;
     display: flex;
